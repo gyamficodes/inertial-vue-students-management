@@ -13,6 +13,8 @@ class student extends Model
     protected $table = "students";
     protected $fillable = ["name", "email", "classes_id","section_id"];
 
+    protected $with = ['classes', 'section'];
+
     public function classes() {
         return $this->belongsTo(classes::class);
     }
