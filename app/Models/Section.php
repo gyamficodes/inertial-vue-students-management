@@ -11,7 +11,7 @@ class Section extends Model
     /** @use HasFactory<\Database\Factories\SectionFactory> */
     use HasFactory;
     protected $table = "sections";
-    protected $fillable = ["name", "classes_id"];
+    protected $fillable = ["name", "classes_id" ];
 
 
 public function students() {

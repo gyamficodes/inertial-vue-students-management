@@ -19,7 +19,9 @@ class student extends Model
         return $this->belongsTo(classes::class);
     }
 
-    public function sections() {
-        return $this->belongsTo( Section::class);
-    }
+ // Define the section relationship
+ public function section()
+ {
+     return $this->belongsTo(Section::class);
+ }
 }

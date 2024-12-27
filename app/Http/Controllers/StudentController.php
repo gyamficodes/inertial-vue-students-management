@@ -9,7 +9,7 @@ class StudentController extends Controller
 {
     public function index(){
         $students = StudentResource::collection(student::all());
-        return inertia('Students/Index', [
+        return inertia('Students/index', [
            'students'=>  $students,
         ]);
     }
