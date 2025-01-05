@@ -8,7 +8,7 @@ use App\Models\student;
 class StudentController extends Controller
 {
     public function index(){
-        $students = StudentResource::collection(student::all());
+        $students = StudentResource::collection(student::paginate(10));
         return inertia('Students/index', [
            'students'=>  $students,
         ]);
