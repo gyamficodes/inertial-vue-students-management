@@ -98,11 +98,14 @@
                                     <tbody
                                         class="divide-y divide-gray-200 bg-white"
                                     >
-                                        <tr v-for="student in students.data" :key="student.id">
+                                        <tr
+                                            v-for="student in students.data"
+                                            :key="student.id"
+                                        >
                                             <td
                                                 class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"
                                             >
-                                            {{ student.id }}
+                                                {{ student.id }}
                                             </td>
                                             <td
                                                 class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6"
@@ -122,12 +125,12 @@
                                             <td
                                                 class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                                             >
-                                               {{student.section.name}}
+                                                {{ student.section.name }}
                                             </td>
                                             <td
                                                 class="whitespace-nowrap px-3 py-4 text-sm text-gray-500"
                                             >
-                                          {{ student.created_at }}
+                                                {{ student.created_at }}
                                             </td>
 
                                             <td
@@ -149,7 +152,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                           <Pagination :data="students"/>
+                            <Pagination :data="students.data" />
                         </div>
                     </div>
                 </div>
@@ -159,17 +162,17 @@
 </template>
 
 <script setup>
- import MagnifyingGlass from '@/Components/Icons/MagnifyingGlass.vue';
-import Pagination from '@/Components/Pagination.vue';
-
+import MagnifyingGlass from "@/Components/Icons/MagnifyingGlass.vue";
+import Pagination from "@/Components/Pagination.vue";
+import { usePage } from "@inertiajs/vue3";
 defineProps({
     students: {
         type: Object,
-        required: true
-    }
-})
+        required: true,
+    },
+});
 
-
+console.log(usePage().props.students);
 </script>
 
 <style lang="scss" scoped></style>
