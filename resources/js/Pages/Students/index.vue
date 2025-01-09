@@ -152,7 +152,7 @@
                                     </tbody>
                                 </table>
                             </div>
-                            <Pagination :data="students.data" />
+                            <Pagination :data="students" />
                         </div>
                     </div>
                 </div>
